@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><h1>Viajes Maravilla</h1></a>
+    </div>
+    <div class="logo">
+    </div>
+
+    <h1>Actividades en la Isla</h1>
+    
+    <div class="actividad-list">
+        <form id="activitiesForm">
+            <div class="actividad">
+                <label>
+                     Viaje - $150
+                </label>
+            </div>
+            <div class="actividad">
+                <label>
+                    <input type="checkbox" value="30"> Snorkeling - 30€
+                </label>
+            </div>
+            <div class="actividad">
+                <label>
+                    <input type="checkbox" value="25"> Senderismo - 25€
+                </label>
+            </div>
+            
+            <div class="actividad">
+                <label>
+                    <input type="checkbox" value="20"> Relax en la playa - 20€
+                </label>
+            </div>
+            
+            <div class="actividad">
+                <label>
+                    <input type="checkbox" value="45"> Buceo - 45€
+                </label>
+            </div>
+            <div class="actividad">
+                <label>
+                    <input type="checkbox" value="35"> Surf - 35€
+                </label>
+            </div>
+        </form>
+        
+        <div>
+            <label for="numPersons">Número de personas:</label>
+            <input type="number" id="numPersons" value="1" min="1" />
+        </div>
+
+        <div class="total">
+            Total: <span id="preciototal">150 €</span>
+            <input type="submit" value="confirmar"></input>
+        </div>
+    </div>
+
+    
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const numPersonsInput = document.getElementById('numPersons');
+        const preciototalElement = document.getElementById('preciototal');
+
+        // Actualiza el precio total cuando se cambia el número de personas o el estado de los checkboxes
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updatepreciototal);
+        });
+
+        numPersonsInput.addEventListener('input', updatepreciototal);
+
+        function updatepreciototal() {
+            let total = 150;
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseInt(checkbox.value); // Suma el costo de las actividades seleccionadas
+                }
+            });
+            const numPersons = parseInt(numPersonsInput.value); // Obtiene el número de personas
+            total *= numPersons; // Multiplica el total por el número de personas
+            preciototalElement.textContent = total; // Actualiza el precio total mostrado
+        }
+    </script>
+</body>
+</html>

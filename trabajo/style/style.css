@@ -1,0 +1,81 @@
+
+.actividad-list{
+    font-size: large;
+    color: black;
+    background-color: aquamarine;
+}
+.header{
+    
+    color:rgb(247, 12, 110);
+    text-align: center;
+    font-size: 60px;
+
+}
+
+.nav{
+    color: white;
+    text-align: center;
+    background-color: rgb(255, 0, 195);
+
+}
+.nav a{
+    color: white;
+    
+}
+.logo{
+    
+
+    
+align-content: center;
+background-image: url("../imagenes/aviation_logo-22.jpg");
+width: 100%;  
+height: 200px;
+
+background-position: center; /* Centra la imagen */
+
+}
+
+
+.container{
+
+background-image: url("../imagenes/oia_santorini_sunset.jpg");
+background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+background-position: center; /* Centra la imagen */
+background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+
+}
+.container h1{
+    color: blue;
+    width: 100%;  
+height: 130px;
+
+text-shadow: 2px 2px 5px rgb(3, 255, 247);
+
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container h2{
+    font-size: 40px;
+    color: red;
+    width: 100%;  
+height: 130px;
+text-align: center;
+text-shadow: 2px 2px 5px rgb(3, 255, 247);
+
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.fotos{
+    display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+            gap: 10px
+}
+.columna{
+    padding: 10px;
+    box-sizing: border-box;
+}
+.fotos img{
+
+    width: 100%; /* Ajusta la imagen al ancho de la columna */
+    height: auto;
+}
